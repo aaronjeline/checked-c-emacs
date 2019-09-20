@@ -1,12 +1,16 @@
 ;;; flychecked-c.el --- description -*- lexical-binding: t; -*-
 
+;;; Code:
 
 ;; Load this file after emacs has initialized
+
+; Set this var to your clang path
+(defvar checked-c-clang "/media/aeline/Extra/checkedc/llvm.obj/bin/clang-8")
 
 (flycheck-define-checker checked-c
   "Checker using the checked c compiler"
   :command (
-            "/media/aeline/Extra/checkedc/llvm.obj/bin/clang-8"
+            checked-c-clang
             "-fsyntax-only"
             source)
   :error-patterns
