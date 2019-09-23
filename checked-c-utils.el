@@ -11,7 +11,7 @@
   (interactive)
   (setf (buffer-string) (shell-command-to-string
                          (concat convert-path " "(buffer-file-name)
-                                 " 2> /dev/null"))))
+                                 " 2> /dev/null | sed -e \"s/\r//g\""))))
 
 
 (provide 'checked-c-utils)

@@ -10,11 +10,15 @@
 (flycheck-define-checker checked-c
   "Checker using the checked c compiler"
   :command (
-            checked-c-clang
+            "/media/aeline/Extra/checkedc/llvm.obj/bin/clang-8"
             "-fsyntax-only"
+            "-I /media/aeline/Extra/checkedc/llvm.obj/lib/clang/8.0.0/include/"
             source)
   :error-patterns
-  ((error line-start (file-name) ":" line ":" column ": error: " (message) line-end))
+  ((error line-start (file-name) ":" line ":" column ": error: " (message) line-end)
+   (warning line-start (file-name) ":" line ":" column ": warning: " (message) line-end)
+   (warning line-start (file-name) ": " line ":" column ": note: " (message) line-end)
+   )
   :modes c-mode)
 
 
