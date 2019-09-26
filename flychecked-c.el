@@ -19,7 +19,7 @@
   ((error line-start (file-name) ":" line ":" column ": error: " (message) line-end)
    (error line-start (file-name) ":" line ":" column ": fatal error: " (message) line-end)
    (warning line-start (file-name) ":" line ":" column ": warning: " (message) line-end)
-   (note line-start (file-name) ":" line ":" column ": note: " (message) line-end)
+   (warning line-start (file-name) ":" line ":" column ": note: " (message) line-end)
    )
   :modes c-mode)
 
